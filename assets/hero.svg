@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-labelledby="title desc">
+  <title id="title">Manual Calibration Tools</title>
+  <desc id="desc">A product hero showing image, point cloud, calibration correspondences, and exported reports.</desc>
+  <rect width="1280" height="420" fill="#f7f9fb"/>
+  <rect x="40" y="44" width="1200" height="332" rx="16" fill="#ffffff" stroke="#d8dee8"/>
+  <text x="80" y="106" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#172033">Manual Calibration Tools</text>
+  <text x="80" y="146" font-family="Inter, Arial, sans-serif" font-size="20" fill="#4d5b6a">Python-first camera-LiDAR calibration GUI built from the FAST-Calib offline workflow</text>
+  <g transform="translate(80 190)">
+    <rect width="260" height="140" rx="10" fill="#1f2937"/>
+    <rect x="22" y="20" width="216" height="100" rx="4" fill="#111827"/>
+    <polygon points="60,92 118,42 190,92" fill="none" stroke="#22c55e" stroke-width="4"/>
+    <circle cx="72" cy="92" r="7" fill="#e879f9"/>
+    <circle cx="118" cy="44" r="7" fill="#e879f9"/>
+    <circle cx="188" cy="92" r="7" fill="#e879f9"/>
+    <text x="20" y="132" font-family="Inter, Arial, sans-serif" font-size="14" fill="#d1d5db">Image ROI + centers</text>
+  </g>
+  <g transform="translate(392 190)">
+    <rect width="260" height="140" rx="10" fill="#eef6ff" stroke="#c8ddf4"/>
+    <g fill="#0b7285">
+      <circle cx="52" cy="102" r="4"/><circle cx="70" cy="92" r="3"/><circle cx="88" cy="108" r="3"/>
+      <circle cx="112" cy="75" r="4"/><circle cx="138" cy="82" r="3"/><circle cx="164" cy="66" r="4"/>
+      <circle cx="190" cy="96" r="3"/><circle cx="212" cy="82" r="4"/><circle cx="224" cy="108" r="3"/>
+      <circle cx="124" cy="110" r="4"/><circle cx="150" cy="104" r="3"/><circle cx="176" cy="116" r="4"/>
+    </g>
+    <rect x="54" y="44" width="154" height="68" rx="4" fill="none" stroke="#f97316" stroke-width="4"/>
+    <circle cx="82" cy="62" r="7" fill="#ef4444"/><circle cx="180" cy="62" r="7" fill="#ef4444"/>
+    <circle cx="82" cy="98" r="7" fill="#ef4444"/><circle cx="180" cy="98" r="7" fill="#ef4444"/>
+    <text x="20" y="132" font-family="Inter, Arial, sans-serif" font-size="14" fill="#334155">LiDAR ROI + plane + holes</text>
+  </g>
+  <g transform="translate(704 190)">
+    <rect width="220" height="140" rx="10" fill="#fff7ed" stroke="#fed7aa"/>
+    <path d="M42 98 C74 40, 142 40, 178 98" fill="none" stroke="#f97316" stroke-width="5"/>
+    <line x1="58" y1="70" x2="166" y2="70" stroke="#64748b" stroke-width="2" stroke-dasharray="6 6"/>
+    <circle cx="58" cy="70" r="7" fill="#2563eb"/><circle cx="166" cy="70" r="7" fill="#2563eb"/>
+    <circle cx="88" cy="52" r="7" fill="#2563eb"/><circle cx="136" cy="52" r="7" fill="#2563eb"/>
+    <text x="20" y="132" font-family="Inter, Arial, sans-serif" font-size="14" fill="#7c2d12">SVD solve T_cam_lidar</text>
+  </g>
+  <g transform="translate(974 190)">
+    <rect width="200" height="140" rx="10" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <rect x="28" y="26" width="144" height="88" rx="6" fill="#ffffff" stroke="#86efac"/>
+    <line x1="48" y1="50" x2="152" y2="50" stroke="#16a34a" stroke-width="4"/>
+    <line x1="48" y1="70" x2="132" y2="70" stroke="#94a3b8" stroke-width="3"/>
+    <line x1="48" y1="90" x2="150" y2="90" stroke="#94a3b8" stroke-width="3"/>
+    <text x="20" y="132" font-family="Inter, Arial, sans-serif" font-size="14" fill="#14532d">Reports + diagnostics</text>
+  </g>
+</svg>
+

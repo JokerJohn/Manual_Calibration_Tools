@@ -1,0 +1,10 @@
+# License Notice
+
+Copyright (c) Xiangcheng HU.
+
+This repository is currently a documentation-preview repository for Manual Calibration Tools. The public source code for the calibration GUI is not included yet.
+
+The intended license for the future public source-code release is the GNU General Public License version 3.0 (GPLv3). Until source code is published, unpublished implementation details remain reserved by the author.
+
+Documentation, diagrams, and project descriptions in this repository may be read, linked, and cited for non-misleading project discussion. Redistribution, republishing, or commercial reuse of unpublished implementation details is not granted by this preview notice.
+
