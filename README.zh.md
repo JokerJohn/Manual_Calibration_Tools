@@ -28,6 +28,37 @@
 
 > **文档预览仓库。** 当前暂未公开源码。本仓库现阶段用于说明产品工作流、数据格式、环境规划、FAST-Calib v1 行为和后续路线图。v1 工作流以已有的 `fast_calib_offline_gui` 私有实现为功能真相；现阶段不要把该仓库理解成可直接运行的源码发布版。
 
+## 项目目标
+
+我们认为，标定任务的核心难点往往不在最后的优化器本身，而在进入优化器之前的观测质量：准确的 2D 像素特征点、准确的 3D 点，以及二者之间可靠的对应关系。
+
+不管目标是标定板、圆孔点，还是其他结构化 pattern；不管最后采用解析法还是批量优化，最终精度上限都受这些观测特征点质量约束。因此 Manual Calibration Tools 的核心目标是：在接受最终外参前，让特征关联过程可见、可编辑、可量化。
+
+v1 工作流首先围绕 FAST-Calib 风格的离线流程构建 GUI 层，让用户能够在 sample 级别检查和修正图像特征、LiDAR 特征、投影关系和重投影误差。
+
+## 相关项目
+
+Manual Calibration Tools 不是替代已有标定算法，而是面向标定观测侧的交互检查与修正层。
+
+- [FAST-Calib](https://github.com/hku-mars/FAST-Calib?tab=readme-ov-file) 是当前 v1 相机-LiDAR target workflow 的算法参考。它提供了面向 solid-state 和 mechanical LiDAR 的高效 target-based LiDAR-camera 外参标定流程。
+- [Kalibr](https://github.com/ethz-asl/kalibr) 是广泛使用的多相机、视觉惯性、多惯性和 rolling-shutter calibration 工具箱，代表了批量优化类标定工具。即便在这类方法中，高质量观测和稳定 target features 仍然是最终结果的基础。
+
+## 效果预览
+
+<p align="center">
+  <img src="assets/screenshots/gui_workbench.png" alt="Manual Calibration Tools GUI workbench" width="100%" />
+</p>
+
+GUI 将图像视图、点云视图、重投影误差视图、投影检查、sample 状态和 workflow controls 放在同一个工作台中。
+
+## 热点功能：手动调整像素特征点并实时评估误差
+
+<p align="center">
+  <img src="assets/demos/edit_circle.gif" alt="Editing image circle centers with live reprojection error review" width="100%" />
+</p>
+
+核心热点功能是手动细调图像圆心。类似测绘/摄影测量软件中的交互方式，用户可以选中某个圆心，用键盘精细移动像素位置，并立即查看重投影误差变化。这样可以在最终优化前选择更可靠的像素特征点，而不是把自动特征检测当成不可审查的黑盒结果。
+
 ## 项目简介
 
 Manual Calibration Tools 的定位是可审查、可交互的标定工作台，而不是一键黑盒脚本。第一阶段将已有的 MID360 FAST-Calib 离线 GUI 工作流产品化：
@@ -36,10 +67,21 @@ Manual Calibration Tools 的定位是可审查、可交互的标定工作台，�
 - 使用 PySide6 桌面 GUI 完成样本检查、ROI 编辑、特征检测、投影检查和批量优化；
 - 使用 OpenCV 的 ArUco/标定板位姿估计提取相机侧孔心；
 - 使用 Open3D 相关能力完成点云读取、LiDAR ROI、平面和孔心检查；
+- 支持手动调整图像中心点，并实时反馈重投影误差；
 - 对确认后的中心对应关系执行刚体 SVD 求解；
 - 导出可审查的外参、残差表、可视化诊断、运行 manifest 和 HTML/Markdown 报告。
 
 后续项目会从 FAST-Calib v1 工作流扩展到标定板方案和更多外参标定任务。
+
+## 结果展示
+
+<p align="center">
+  <img src="assets/screenshots/image_features.png" alt="Detected image features" width="32%" />
+  <img src="assets/screenshots/reprojection_error.png" alt="Reprojection error view" width="32%" />
+  <img src="assets/screenshots/projection_overlay.png" alt="Projection overlay" width="32%" />
+</p>
+
+导出的 artifacts 保留了最终 transform 背后的证据：图像特征检测、中心重投影残差和密集点云投影 overlay。
 
 ## v1 的功能真相
 
@@ -185,4 +227,3 @@ GitHub Wiki 源文件保存在 [wiki/](wiki/)。
 ## 许可证与源码状态
 
 当前仓库暂不包含公开源码。未来源码发布计划采用 GNU GPLv3。源码发布前，实现细节仍未公开，本仓库应视为文档和项目规划材料。
-

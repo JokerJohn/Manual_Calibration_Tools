@@ -6,6 +6,9 @@ All notable public documentation changes for Manual Calibration Tools will be re
 
 ### Added
 
+- Added README positioning around feature-observation quality as the core calibration bottleneck.
+- Added FAST-Calib and Kalibr references to the English and Chinese READMEs.
+- Added GUI screenshot, feature result images, and the `edit_circle` GIF demo.
 - Created the documentation-preview repository structure.
 - Added English and Chinese READMEs for the FAST-Calib offline GUI v1 product direction.
 - Added environment, dataset, workflow, outputs, and roadmap documentation.
@@ -16,4 +19,3 @@ All notable public documentation changes for Manual Calibration Tools will be re
 
 - Public source code is not included yet.
 - v1 documentation follows the existing `fast_calib_offline_gui` implementation and does not introduce a new workflow or solver path.
-

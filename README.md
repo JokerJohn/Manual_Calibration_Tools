@@ -28,6 +28,37 @@ Python-first calibration GUI for camera-LiDAR and future multi-sensor extrinsic 
 
 > **Documentation preview.** The public source code is not released yet. This repository currently documents the product workflow, dataset format, environment plan, FAST-Calib v1 behavior, and release roadmap. The v1 workflow is based on the existing private implementation in `fast_calib_offline_gui`; the public repository should not be interpreted as a runnable source release at this stage.
 
+## Goal
+
+The core difficulty in calibration is often not the final optimizer itself, but the quality of the associated observations that enter the optimizer: accurate 2D pixel features, accurate 3D points, and a reliable correspondence between them.
+
+Whether the target is a calibration board, circular holes, or another structured pattern, and whether the final solve is analytic or batch-optimized, the final accuracy is bounded by the quality of these observed feature points. Manual Calibration Tools is built around this principle: make the feature association visible, editable, and measurable before accepting the final extrinsic.
+
+The first v1 workflow is a GUI layer around a FAST-Calib-style offline process. It keeps the calibrated result auditable by letting the user inspect and refine image features, LiDAR features, projection, and reprojection error at the sample level.
+
+## Related Projects
+
+Manual Calibration Tools is not a replacement for established calibration algorithms. It is a review and interaction layer for the observation side of calibration.
+
+- [FAST-Calib](https://github.com/hku-mars/FAST-Calib?tab=readme-ov-file) is the v1 algorithmic reference for the current camera-LiDAR target workflow. It provides an efficient target-based LiDAR-camera extrinsic calibration pipeline for solid-state and mechanical LiDAR systems.
+- [Kalibr](https://github.com/ethz-asl/kalibr) is a widely used calibration toolbox for multi-camera, visual-inertial, multi-inertial, and rolling-shutter calibration problems. It represents the batch-optimization family of calibration tools where high-quality measurements and target observations remain central to the final result.
+
+## Visual Preview
+
+<p align="center">
+  <img src="assets/screenshots/gui_workbench.png" alt="Manual Calibration Tools GUI workbench" width="100%" />
+</p>
+
+The GUI keeps the image view, point-cloud view, reprojection-error view, projection review, sample status, and workflow controls visible in one workbench.
+
+## Highlight: Editable Image Centers With Live Error Review
+
+<p align="center">
+  <img src="assets/demos/edit_circle.gif" alt="Editing image circle centers with live reprojection error review" width="100%" />
+</p>
+
+The hotspot feature is manual image-center refinement. Similar to workflows in survey and photogrammetry software, the user can select a circle center, nudge its pixel location with keyboard-level precision, and immediately evaluate the reprojection error. This makes it possible to choose the best pixel feature point before final optimization instead of treating feature detection as an irreversible black box.
+
 ## Overview
 
 Manual Calibration Tools is designed as a practical calibration workbench instead of a one-click black box. The first release path productizes the existing MID360 FAST-Calib offline GUI workflow:
@@ -36,10 +67,21 @@ Manual Calibration Tools is designed as a practical calibration workbench instea
 - PySide6 desktop GUI for sample review, ROI editing, feature detection, projection checking, and batch optimization;
 - OpenCV-based ArUco board pose and camera-side hole-center extraction;
 - Open3D-assisted point-cloud loading and LiDAR-side ROI / plane / hole-center review;
+- manual image-center editing with live reprojection-error feedback;
 - rigid SVD solve over confirmed 2D/3D-derived center correspondences;
 - auditable outputs: extrinsics, residual tables, visual diagnostics, run manifest, and HTML/Markdown report.
 
 The project is intended to grow from the FAST-Calib v1 workflow into a broader manual-assisted calibration platform for calibration-board methods and other extrinsic calibration tasks.
+
+## Result Gallery
+
+<p align="center">
+  <img src="assets/screenshots/image_features.png" alt="Detected image features" width="32%" />
+  <img src="assets/screenshots/reprojection_error.png" alt="Reprojection error view" width="32%" />
+  <img src="assets/screenshots/projection_overlay.png" alt="Projection overlay" width="32%" />
+</p>
+
+The exported artifacts preserve the evidence behind the final transform: detected image features, center reprojection residuals, and dense projection overlays.
 
 ## Source Of Truth For V1
 
@@ -185,4 +227,3 @@ The source pages for the GitHub Wiki are kept under [wiki/](wiki/).
 ## License And Source Availability
 
 The public source code is not included in this repository yet. The intended source-code license for the future release is GNU GPLv3. Until the source is published, implementation details remain unpublished, and this repository should be treated as documentation and project planning material.
-
