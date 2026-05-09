@@ -34,12 +34,6 @@ The v1 workflow is an offline calibration workbench:
 - solve `T_cam_lidar`;
 - export extrinsics, residuals, reports, and visual artifacts.
 
-## What V1 Does Not Claim
-
-- It does not read raw rosbag files directly in the GUI.
-- It does not publish source code yet.
-- It does not claim general support for every calibration target or every multi-sensor task.
-
 ## Repository Links
 
 - [Main README](https://github.com/JokerJohn/Manual_Calibration_Tools/blob/master/README.md)
@@ -48,4 +42,3 @@ The v1 workflow is an offline calibration workbench:
 - [Dataset Documentation](https://github.com/JokerJohn/Manual_Calibration_Tools/blob/master/docs/DATASET.md)
 - [Workflow Documentation](https://github.com/JokerJohn/Manual_Calibration_Tools/blob/master/docs/WORKFLOW.md)
 - [Outputs Documentation](https://github.com/JokerJohn/Manual_Calibration_Tools/blob/master/docs/OUTPUTS.md)
-

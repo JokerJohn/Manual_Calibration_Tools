@@ -17,13 +17,6 @@ Scope:
 - rigid SVD solve for `T_cam_lidar`;
 - exported extrinsics, residual CSVs, visual diagnostics, manifest, and reports.
 
-Non-goals for v1 public documentation:
-
-- no direct rosbag ingestion claim;
-- no claim that source code is already public;
-- no claim that every calibration-board workflow is supported;
-- no claim of a general multi-sensor calibration suite.
-
 ## v1.x: Packaging And Examples
 
 Planned:
@@ -57,4 +50,3 @@ Planned:
 - downstream export profiles for common robotics stacks.
 
 The product principle remains the same: expose the evidence that makes a calibration credible, not just the final matrix.
-

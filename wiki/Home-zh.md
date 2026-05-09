@@ -34,12 +34,6 @@ v1 是离线标定工作台：
 - 求解 `T_cam_lidar`；
 - 导出外参、残差、报告和可视化 artifacts。
 
-## v1 不做什么承诺
-
-- GUI 不直接读取原始 rosbag。
-- 当前不发布源码。
-- 当前不宣称支持所有标定 target 或所有多传感器任务。
-
 ## 仓库链接
 
 - [Main README](https://github.com/JokerJohn/Manual_Calibration_Tools/blob/master/README.md)
@@ -48,4 +42,3 @@ v1 是离线标定工作台：
 - [数据文档](https://github.com/JokerJohn/Manual_Calibration_Tools/blob/master/docs/DATASET.zh.md)
 - [工作流文档](https://github.com/JokerJohn/Manual_Calibration_Tools/blob/master/docs/WORKFLOW.zh.md)
 - [输出文档](https://github.com/JokerJohn/Manual_Calibration_Tools/blob/master/docs/OUTPUTS.zh.md)
-
