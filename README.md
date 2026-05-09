@@ -24,6 +24,13 @@
   <strong>Contact</strong>: <a href="mailto:xhubd@connect.ust.hk">xhubd@connect.ust.hk</a>
 </p>
 
+<p align="center">
+  <strong>References</strong>:
+  <a href="https://github.com/hku-mars/FAST-Calib?tab=readme-ov-file">FAST-Calib</a>
+  ·
+  <a href="https://github.com/ethz-asl/kalibr">Kalibr</a>
+</p>
+
 Python-first calibration GUI for camera-LiDAR and future multi-sensor extrinsic calibration workflows.
 
 > **Documentation preview.** The public source code is not released yet. This repository currently documents the product workflow, dataset format, environment plan, FAST-Calib v1 behavior, and release roadmap. The v1 workflow is based on the existing private implementation in `fast_calib_offline_gui`; the public repository should not be interpreted as a runnable source release at this stage.

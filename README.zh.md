@@ -24,6 +24,13 @@
   <strong>联系邮箱</strong>：<a href="mailto:xhubd@connect.ust.hk">xhubd@connect.ust.hk</a>
 </p>
 
+<p align="center">
+  <strong>相关链接</strong>：
+  <a href="https://github.com/hku-mars/FAST-Calib?tab=readme-ov-file">FAST-Calib</a>
+  ·
+  <a href="https://github.com/ethz-asl/kalibr">Kalibr</a>
+</p>
+
 面向相机-激光雷达以及后续多传感器外参标定任务的 Python 优先标定 GUI。
 
 > **文档预览仓库。** 当前暂未公开源码。本仓库现阶段用于说明产品工作流、数据格式、环境规划、FAST-Calib v1 行为和后续路线图。v1 工作流以已有的 `fast_calib_offline_gui` 私有实现为功能真相；现阶段不要把该仓库理解成可直接运行的源码发布版。
