@@ -4,7 +4,7 @@
 
 Manual Calibration Tools 是一个 Python-first 标定 GUI 项目。第一阶段公开产品方向基于已有 FAST-Calib offline GUI，用于已经整理好的 image/PCD samples。
 
-**作者**：[Xiangcheng HU](https://github.com/JokerJohn)  
+**作者**：[Xiangcheng HU](https://github.com/JokerJohn)、[Jin Wu](https://github.com/zarathustr)、[Xieyuanli Chen](https://github.com/Chen-Xieyuanli)  
 **联系邮箱**：[xhubd@connect.ust.hk](mailto:xhubd@connect.ust.hk)
 
 > 当前状态：文档预览。公开源码暂未发布。
